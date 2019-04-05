@@ -22,7 +22,7 @@ export default class TvShowInfo extends React.Component {
       fetchString += str + '+'
     });
     fetchString += '&apikey=92e3aa84'
-
+    console.log(fetchString);
     fetch(fetchString)
       .then((response) => response.json())
       .then((responseJson) => {

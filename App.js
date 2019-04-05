@@ -16,9 +16,24 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
+const apikey = '92e3aa84'
+const dataRequest = 'http://www.omdbapi.com/?apikey=' + apikey + '&';
+
+function getMoviesFromApiAsync() {
+  fetch('http://www.omdbapi.com/?i=tt3896198&apikey=92e3aa84')
+    .then((response) => response.json())
+    .then((responseJson) => {
+      console.log('responseJson: ', responseJson);
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
 type Props = {};
 export default class App extends Component<Props> {
   render() {
+    getMoviesFromApiAsync();
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>

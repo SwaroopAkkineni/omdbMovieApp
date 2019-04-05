@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
+const { height, width } = Dimensions.get('window');
 
 export default class Episode extends React.Component {
   state = {
@@ -41,33 +42,34 @@ export default class Episode extends React.Component {
     const {episode} = this.state;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{episode.Title}</Text>
-        <Text style={styles.instructions}>Director {episode.Director} </Text>
-        <Text style={styles.instructions}>written by: {episode.Writer} </Text>
-        <Text style={styles.instructions}>Rating: {episode.Writer} </Text>
-        <Text style={styles.instructions}>Plot: {episode.Plot} </Text>
-        <Image style={{width: 100, height: 100}} source={{uri: episode.Poster}}/>
+        <View style={{flex: 2}}>
+          <Text style={styles.welcome}>{episode.Title}</Text>
+        </View>
+        <View style={{flex: 4}}>
+          <Text style={styles.instructions}>Directed by: {episode.Director} </Text>
+          <Text style={styles.instructions}>written by: {episode.Writer} </Text>
+          <Text style={styles.instructions}>Rated: {episode.Rated} </Text>
+          <Text style={styles.instructions}>Plot: {episode.Plot} </Text>
+        </View>
+        <View style={{flex: 5}}>
+        </View>
       </View>
     );
   }
 }
 
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    textAlign: 'left',
+    marginLeft: width * 0.1,
+    marginRight: width * 0.1,
   },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    marginTop: width * 0.1,
+    fontSize: height * 0.03,
   },
   instructions: {
-    textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
   },
 });

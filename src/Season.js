@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, FlatList, Platform, StyleSheet, Text, View} from 'react-native';
 import Episode from './Episode';
+const { height, width } = Dimensions.get('window');
 
 export default class Season extends React.Component {
   state = {
@@ -61,18 +62,15 @@ export default class Season extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    textAlign: 'left',
+    marginLeft: width * 0.1,
+    marginRight: width * 0.1,
   },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    marginTop: width * 0.1,
+    fontSize: height * 0.03,
   },
   instructions: {
-    textAlign: 'center',
     color: '#333333',
-    marginBottom: 5,
   },
 });

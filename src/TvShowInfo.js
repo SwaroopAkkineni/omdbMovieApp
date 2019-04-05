@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, FlatList, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Season from './Season';
+const { height, width } = Dimensions.get('window');
 
 export default class TvShowInfo extends React.Component {
   state = {
@@ -44,12 +45,14 @@ export default class TvShowInfo extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>{showName}</Text>
-        <Text style={styles.welcome}>Seasons: {seasons}</Text>
+        <Text style={styles.welcome}>Season: {seasons}</Text>
         <FlatList
           data={Array.from({length: seasons}, (v, k) => k+1)}
           renderItem={({ item }) => (
-            <Text style={styles.instructions}
-                  onPress={() => navigate('Season', { season: item, showName: showName})}>Season {item} </Text>
+            <TouchableOpacity style={styles.todoItem}
+                  onPress={() => navigate('Season', { season: item, showName: showName})}>
+              <Text style={styles.instructions}>Season {item} </Text>
+            </TouchableOpacity>
           )}
         />
       </View>
@@ -60,18 +63,28 @@ export default class TvShowInfo extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    textAlign: 'left',
+    paddingLeft: width * 0.1,
+    paddingRight: width * 0.1,
+    backgroundColor: '#89D2DC',
+  },
+  todoItem: {
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    padding: 8,
+    width: 320,
+    borderBottomWidth: 1.5,
+    borderColor: '#101D42',
+    backgroundColor: '#89D2DC',
+    flex: 1,
+    flexDirection: 'row',
   },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+    color: '#101D42',
+    fontWeight: 'bold',
+    marginTop: width * 0.1,
+    fontSize: height * 0.03,
   },
   instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    color: '#101D42',
   },
 });

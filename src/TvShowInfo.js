@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
+import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
 
 const apikey = '92e3aa84'
 const dataRequest = 'http://www.omdbapi.com/?apikey=' + apikey + '&';
@@ -42,9 +42,17 @@ export default class TvShowInfo extends React.Component {
 
   render() {
     const { title, seasons } = this.state;
+
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>{title}</Text>
+        <Text style={styles.welcome}>Seasons: {seasons}</Text>
+        <FlatList
+          data={Array.from({length: seasons}, (v, k) => k+1)}
+          renderItem={({ item }) => (
+            <Text> Season {item}</Text>
+          )}
+        />
       </View>
     )
   }

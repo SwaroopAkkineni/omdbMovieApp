@@ -12,7 +12,13 @@ const AppNavigator = createStackNavigator(
     TitleScreen: TitleScreen,
     TvShowInfo: TvShowInfo,
   }, {
-    initialRouteName: 'TitleScreen'
+    initialRouteName: 'TitleScreen',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#89D2DC',
+      },
+      headerTintColor: '#101D42',
+    },
   }
 );
 

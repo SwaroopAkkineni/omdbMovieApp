@@ -63,14 +63,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     textAlign: 'left',
-    marginLeft: width * 0.1,
-    marginRight: width * 0.1,
+    paddingLeft: width * 0.1,
+    paddingRight: width * 0.1,
+    backgroundColor: '#89D2DC',
   },
   welcome: {
+    color: '#101D42',
     marginTop: width * 0.1,
     fontSize: height * 0.03,
   },
   instructions: {
-    color: '#333333',
+    color: '#101D42',
   },
 });

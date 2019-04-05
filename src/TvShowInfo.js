@@ -1,13 +1,11 @@
 import React, {Component} from 'react';
 import {FlatList, Platform, StyleSheet, Text, View} from 'react-native';
-
-const apikey = '92e3aa84'
-const dataRequest = 'http://www.omdbapi.com/?apikey=' + apikey + '&';
+import Season from './Season';
 
 export default class TvShowInfo extends React.Component {
   state = {
     fetchString: '',
-    title: '',
+    showName: '',
 		seasons: 0,
 	};
 
@@ -17,10 +15,10 @@ export default class TvShowInfo extends React.Component {
 
   processFetchString = () => {
     const { navigation } = this.props;
-    const title = navigation.getParam('tvTitle');
+    const showName = navigation.getParam('showName');
     let fetchString = 'http://www.omdbapi.com/?t=';
 
-    title.split(' ').forEach(function(str) {
+    showName.split(' ').forEach(function(str) {
       fetchString += str + '+'
     });
     fetchString += '&apikey=92e3aa84'
@@ -31,7 +29,7 @@ export default class TvShowInfo extends React.Component {
         console.log('responseJson: ', responseJson);
         this.setState({
           fetchString: fetchString,
-          title: title,
+          showName: showName,
           seasons: responseJson.totalSeasons,
         });
       })
@@ -41,16 +39,17 @@ export default class TvShowInfo extends React.Component {
   }
 
   render() {
-    const { title, seasons } = this.state;
-
+    const { showName, seasons } = this.state;
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{title}</Text>
+        <Text style={styles.welcome}>{showName}</Text>
         <Text style={styles.welcome}>Seasons: {seasons}</Text>
         <FlatList
           data={Array.from({length: seasons}, (v, k) => k+1)}
           renderItem={({ item }) => (
-            <Text> Season {item}</Text>
+            <Text style={styles.instructions}
+                  onPress={() => navigate('Season', { season: item, showName: showName})}>Season {item} </Text>
           )}
         />
       </View>

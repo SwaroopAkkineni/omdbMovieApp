@@ -43,8 +43,7 @@ export default class Season extends React.Component {
     const season = navigation.getParam('season');
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{showName}</Text>
-        <Text style={styles.instructions}>Season {season} </Text>
+        <Text style={styles.Title}>{showName} Season {season} </Text>
         <FlatList
           data={episodes}
           renderItem={({ item }) => (

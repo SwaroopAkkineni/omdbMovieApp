@@ -16,6 +16,7 @@ const AppNavigator = createStackNavigator(
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#89D2DC',
+        borderBottomWidth: 0,
       },
       headerTintColor: '#101D42',
     },

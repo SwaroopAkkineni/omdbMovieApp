@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, FlatList, Platform, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, FlatList, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Episode from './Episode';
 const { height, width } = Dimensions.get('window');
 
@@ -48,8 +48,10 @@ export default class Season extends React.Component {
         <FlatList
           data={episodes}
           renderItem={({ item }) => (
-            <Text style={styles.instructions}
-                  onPress={() => navigation.navigate('Episode', { episode: item.Episode, season: season, showName: showName})}>Episode: {item.Episode} {item.Title} </Text>
+            <TouchableOpacity style={styles.todoItem}
+                              onPress={() => navigation.navigate('Episode', { episode: item.Episode, season: season, showName: showName})}>
+              <Text style={styles.instructions}>Episode: {item.Episode} {item.Title} </Text>
+            </TouchableOpacity>
           )}
         />
       </View>
@@ -66,6 +68,14 @@ const styles = StyleSheet.create({
     paddingLeft: width * 0.1,
     paddingRight: width * 0.1,
     backgroundColor: '#89D2DC',
+  },
+  todoItem: {
+    alignItems: 'center',
+    height: height * 0.075,
+    borderBottomWidth: 1.5,
+    borderColor: '#101D42',
+    backgroundColor: '#89D2DC',
+    flexDirection: 'row',
   },
   welcome: {
     color: '#101D42',

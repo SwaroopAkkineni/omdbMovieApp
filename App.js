@@ -2,7 +2,7 @@ import React from 'react';
 import Episode from './src/Episode';
 import Season from './src/Season';
 import TitleScreen from './src/TitleScreen';
-import TvShowInfo from './src/TvShowInfo';
+import TelevisionSeries from './src/TelevisionSeries';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 const AppNavigator = createStackNavigator(
@@ -10,7 +10,7 @@ const AppNavigator = createStackNavigator(
     Episode: Episode,
     Season: Season,
     TitleScreen: TitleScreen,
-    TvShowInfo: TvShowInfo,
+    TelevisionSeries: TelevisionSeries,
   }, {
     initialRouteName: 'TitleScreen',
     defaultNavigationOptions: {

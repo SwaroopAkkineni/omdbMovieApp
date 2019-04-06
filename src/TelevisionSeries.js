@@ -70,12 +70,10 @@ const styles = StyleSheet.create({
   },
   todoItem: {
     alignItems: 'center',
-    padding: 8,
-    width: 320,
+    height: height * 0.075,
     borderBottomWidth: 1.5,
     borderColor: '#101D42',
     backgroundColor: '#89D2DC',
-    flex: 1,
     flexDirection: 'row',
   },
   welcome: {

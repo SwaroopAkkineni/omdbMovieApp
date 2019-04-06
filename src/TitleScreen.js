@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, Platform, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, FlatList, Platform, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 export default class TitleScreen extends React.Component {
@@ -8,16 +8,23 @@ export default class TitleScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}
-              onPress={() => navigate('TvShowInfo', {showName: 'The Office'})}>The Office</Text>
-        <Text style={styles.instructions}
-              onPress={() => navigate('TvShowInfo', {showName: 'Parks and Recreation'})}>Parks and Recreation</Text>
-        <Text style={styles.instructions}
-              onPress={() => navigate('TvShowInfo', {showName: 'The Good Place'})}>The Good PLace</Text>
+        <TouchableOpacity style={styles.todoItem}
+                          onPress={() => navigate('TelevisionSeries', {showName: 'Parks and Recreation'})}>
+          <Text style={styles.instructions}>Parks and Recreation</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.todoItem}
+                          onPress={() => navigate('TelevisionSeries', {showName: 'The Good Place'})}>
+          <Text style={styles.instructions}>The Good PLace</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.todoItem}
+                          onPress={() => navigate('TelevisionSeries', {showName: 'The Office'})}>
+          <Text style={styles.instructions}>The Office</Text>
+        </TouchableOpacity>
       </View>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
@@ -27,8 +34,17 @@ const styles = StyleSheet.create({
     paddingRight: width * 0.1,
     backgroundColor: '#89D2DC',
   },
+  todoItem: {
+    alignItems: 'center',
+    height: height * 0.075,
+    borderBottomWidth: 1.5,
+    borderColor: '#101D42',
+    backgroundColor: '#89D2DC',
+    flexDirection: 'row',
+  },
   welcome: {
     color: '#101D42',
+    fontWeight: 'bold',
     marginTop: width * 0.1,
     fontSize: height * 0.03,
   },

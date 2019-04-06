@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, FlatList, Image, StyleSheet, Text, View} from 'react-native';
 const { height, width } = Dimensions.get('window');
 
 export default class Episode extends React.Component {

@@ -3,7 +3,7 @@ import {Dimensions, FlatList, Platform, StyleSheet, Text, TouchableOpacity, View
 import Season from './Season';
 const { height, width } = Dimensions.get('window');
 
-export default class TvShowInfo extends React.Component {
+export default class TelevisionSeries extends React.Component {
   state = {
     fetchString: '',
     showName: '',
@@ -16,7 +16,7 @@ export default class TvShowInfo extends React.Component {
 
   processFetchString = () => {
     const { navigation } = this.props;
-    const showName = navigation.getParam('showName');
+    const showName = navigation.state.params.showName;
     let fetchString = 'http://www.omdbapi.com/?t=';
 
     showName.split(' ').forEach(function(str) {

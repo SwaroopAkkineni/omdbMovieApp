@@ -17,7 +17,7 @@ module.exports = StyleSheet.create({
     backgroundColor: '#89D2DC',
     flexDirection: 'row',
   },
-  welcome: {
+  Title: {
     color: '#101D42',
     fontWeight: 'bold',
     marginTop: width * 0.1,

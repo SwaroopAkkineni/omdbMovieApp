@@ -44,8 +44,7 @@ export default class TelevisionSeries extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>{showName}</Text>
-        <Text style={styles.welcome}>Season: {seasons}</Text>
+        <Text style={styles.Title}>{showName}</Text>
         <FlatList
           data={Array.from({length: seasons}, (v, k) => k+1)}
           renderItem={({ item }) => (

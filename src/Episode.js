@@ -43,7 +43,7 @@ export default class Episode extends React.Component {
     return (
       <View style={styles.container}>
         <View style={{flex: 2}}>
-          <Text style={styles.welcome}>{episode.Title}</Text>
+          <Text style={styles.Title}>{episode.Title}</Text>
         </View>
         <View style={{flex: 4}}>
           <Text style={styles.instructions}>Directed by: {episode.Director} </Text>

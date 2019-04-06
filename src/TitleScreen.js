@@ -7,7 +7,7 @@ export default class TitleScreen extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
+        <Text style={styles.Title}>Click a Show!</Text>
         <TouchableOpacity style={styles.todoItem}
                           onPress={() => navigate('TelevisionSeries', {showName: 'Parks and Recreation'})}>
           <Text style={styles.instructions}>Parks and Recreation</Text>

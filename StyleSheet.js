@@ -9,7 +9,7 @@ module.exports = StyleSheet.create({
     paddingRight: width * 0.1,
     backgroundColor: '#89D2DC',
   },
-  todoItem: {
+  BulletIte: {
     alignItems: 'center',
     height: height * 0.075,
     borderBottomWidth: 1.5,
@@ -18,12 +18,21 @@ module.exports = StyleSheet.create({
     flexDirection: 'row',
   },
   Title: {
-    color: '#101D42',
     fontWeight: 'bold',
-    marginTop: width * 0.1,
+    marginTop: width * 0.05,
+    marginBottom: width * 0.05,
     fontSize: height * 0.03,
   },
-  instructions: {
+  EpisodeInformation: {
+    marginTop: width * 0.05,
+  },
+  FontColor: {
     color: '#101D42',
   },
+  PosterStyle: {
+    marginTop: width * 0.05,
+    width: width * 0.8,
+    height: width * 0.8,
+  }
+
 });

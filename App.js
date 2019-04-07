@@ -1,7 +1,7 @@
 import React from 'react';
 import Episode from './src/Episode';
 import Season from './src/Season';
-import TitleScreen from './src/TitleScreen';
+import MainScreen from './src/MainScreen';
 import TelevisionSeries from './src/TelevisionSeries';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
@@ -9,10 +9,10 @@ const AppNavigator = createStackNavigator(
   {
     Episode: Episode,
     Season: Season,
-    TitleScreen: TitleScreen,
+    MainScreen: MainScreen,
     TelevisionSeries: TelevisionSeries,
   }, {
-    initialRouteName: 'TitleScreen',
+    initialRouteName: 'MainScreen',
     defaultNavigationOptions: {
       headerStyle: {
         backgroundColor: '#89D2DC',

@@ -14,28 +14,20 @@ exports[`renders correctly 1`] = `
 >
   <Text
     style={
-      Object {
-        "color": "#101D42",
-        "fontSize": 40.019999999999996,
-        "fontWeight": "bold",
-        "marginTop": 75,
-      }
+      Array [
+        Object {
+          "fontSize": 40.019999999999996,
+          "fontWeight": "bold",
+          "marginBottom": 37.5,
+          "marginTop": 37.5,
+        },
+        Object {
+          "color": "#101D42",
+        },
+      ]
     }
   >
     
-  </Text>
-  <Text
-    style={
-      Object {
-        "color": "#101D42",
-        "fontSize": 40.019999999999996,
-        "fontWeight": "bold",
-        "marginTop": 75,
-      }
-    }
-  >
-    Season: 
-    0
   </Text>
   <RCTScrollView
     data={Array []}

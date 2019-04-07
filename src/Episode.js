@@ -22,11 +22,9 @@ export default class Episode extends React.Component {
       fetchString += str + '+'
     });
     fetchString += '&season=' + season + '&episode=' + episode +'&apikey=92e3aa84'
-    console.log('fetchString: ', fetchString);
     fetch(fetchString)
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log('responseJson: ', responseJson);
         this.setState({
           episode: responseJson,
         });

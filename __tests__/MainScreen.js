@@ -1,11 +1,11 @@
 import React from 'react';
 import 'react-native';
-import TitleScreen from '../src/TitleScreen';
+import MainScreen from '../src/MainScreen';
 
 import renderer from 'react-test-renderer';
  const navigation = { navigate: jest.fn() };
 
 test('renders correctly', () => {
-  const tree = renderer.create(<TitleScreen navigation={navigation}/>).toJSON();
+  const tree = renderer.create(<MainScreen navigation={navigation}/>).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -13,7 +13,7 @@ const mockResponse = (status, statusText, response) => {
                 'Content-type': 'application/json'
             }
         });
-    }; 
+    };
 
 test('renders correctly', () => {
   fetch = jest.fn(() => new Promise(resolve => resolve()));

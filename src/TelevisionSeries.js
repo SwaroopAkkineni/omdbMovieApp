@@ -44,13 +44,13 @@ export default class TelevisionSeries extends React.Component {
     const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.Title}>{showName}</Text>
+        <Text style={[styles.Title, styles.FontColor]}>{showName}</Text>
         <FlatList
           data={Array.from({length: seasons}, (v, k) => k+1)}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.todoItem}
+            <TouchableOpacity style={styles.BulletIte}
                   onPress={() => navigate('Season', { season: item, showName: showName})}>
-              <Text style={styles.instructions}>Season {item} </Text>
+              <Text style={styles.FontColor}>Season {item} </Text>
             </TouchableOpacity>
           )}
         />

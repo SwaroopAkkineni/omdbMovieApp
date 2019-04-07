@@ -42,17 +42,23 @@ export default class Episode extends React.Component {
     const {episode} = this.state;
     return (
       <View style={styles.container}>
-        <View style={{flex: 2}}>
-          <Text style={styles.Title}>{episode.Title}</Text>
-        </View>
-        <View style={{flex: 4}}>
-          <Text style={styles.instructions}>Directed by: {episode.Director} </Text>
-          <Text style={styles.instructions}>written by: {episode.Writer} </Text>
-          <Text style={styles.instructions}>Rated: {episode.Rated} </Text>
-          <Text style={styles.instructions}>Plot: {episode.Plot} </Text>
-        </View>
-        <View style={{flex: 5}}>
-        </View>
+        <Text style={[styles.Title, styles.FontColor]}>{episode.Title}</Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Directed by: </Text>
+          <Text>{episode.Director}</Text>
+        </Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Written by: </Text>
+          <Text>{episode.Writer}</Text>
+        </Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Rated: </Text>
+          <Text>{episode.Rated}</Text>
+        </Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Plot: </Text>
+          <Text>{episode.Plot}</Text>
+        </Text>
       </View>
     );
   }

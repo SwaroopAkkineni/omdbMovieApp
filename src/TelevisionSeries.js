@@ -48,7 +48,7 @@ export default class TelevisionSeries extends React.Component {
         <FlatList
           data={Array.from({length: seasons}, (v, k) => k+1)}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.BulletIte}
+            <TouchableOpacity style={styles.BulletItem}
                   onPress={() => navigate('Season', { season: item, showName: showName})}>
               <Text style={styles.FontColor}>Season {item} </Text>
             </TouchableOpacity>

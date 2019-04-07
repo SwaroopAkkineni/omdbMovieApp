@@ -47,7 +47,7 @@ export default class Season extends React.Component {
         <FlatList
           data={episodes}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.BulletIte}
+            <TouchableOpacity style={styles.BulletItem}
                               onPress={() => navigation.navigate('Episode', { episode: item.Episode, season: season, showName: showName})}>
               <Text style={styles.FontColor}>Episode: {item.Episode}: {item.Title} </Text>
             </TouchableOpacity>

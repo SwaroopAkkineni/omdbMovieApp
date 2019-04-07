@@ -9,7 +9,7 @@ module.exports = StyleSheet.create({
     paddingRight: width * 0.1,
     backgroundColor: '#89D2DC',
   },
-  BulletIte: {
+  BulletItem: {
     alignItems: 'center',
     height: height * 0.075,
     borderBottomWidth: 1.5,

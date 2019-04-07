@@ -5,21 +5,18 @@ import styles from '../StyleSheet';
 export default class MainScreen extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
+    const tvShows = ['Parks and Recreation', 'The Good Place', 'The Office'];
     return (
       <View style={styles.container}>
         <Text style={[styles.Title, styles.FontColor]}>Click a Show!</Text>
-        <TouchableOpacity style={styles.BulletIte}
-                          onPress={() => navigate('TelevisionSeries', {showName: 'Parks and Recreation'})}>
-          <Text style={styles.FontColor}>Parks and Recreation</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.BulletIte}
-                          onPress={() => navigate('TelevisionSeries', {showName: 'The Good Place'})}>
-          <Text style={styles.FontColor}>The Good PLace</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.BulletIte}
-                          onPress={() => navigate('TelevisionSeries', {showName: 'The Office'})}>
-          <Text style={styles.FontColor}>The Office</Text>
-        </TouchableOpacity>
+        <FlatList
+          data={tvShows}
+          renderItem={({ item }) => (
+            <TouchableOpacity style={styles.BulletItem} onPress={() => navigate('TelevisionSeries', {showName: item})}>
+              <Text style={styles.FontColor}>{item}</Text>
+            </TouchableOpacity>
+          )}
+        />
       </View>
     );
   }

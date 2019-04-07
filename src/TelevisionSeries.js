@@ -5,7 +5,6 @@ import Season from './Season';
 
 export default class TelevisionSeries extends React.Component {
   state = {
-    fetchString: '',
     showName: '',
 		seasons: 0,
 	};
@@ -23,13 +22,10 @@ export default class TelevisionSeries extends React.Component {
       fetchString += str + '+'
     });
     fetchString += '&apikey=92e3aa84'
-    console.log(fetchString);
     fetch(fetchString)
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log('responseJson: ', responseJson);
         this.setState({
-          fetchString: fetchString,
           showName: showName,
           seasons: responseJson.totalSeasons,
         });
@@ -48,7 +44,7 @@ export default class TelevisionSeries extends React.Component {
         <FlatList
           data={Array.from({length: seasons}, (v, k) => k+1)}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.BulletIte}
+            <TouchableOpacity style={styles.BulletItem}
                   onPress={() => navigate('Season', { season: item, showName: showName})}>
               <Text style={styles.FontColor}>Season {item} </Text>
             </TouchableOpacity>

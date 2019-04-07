@@ -11,7 +11,6 @@ export default class Episode extends React.Component {
     this.getEpisode();
   }
 
-
   getEpisode = () => {
     const { navigation } = this.props;
     const episode = navigation.getParam('episode');
@@ -37,7 +36,6 @@ export default class Episode extends React.Component {
       });
   }
 
-//        <Text>{episode.Poster} </Text>
   render() {
     const {episode} = this.state;
     return (

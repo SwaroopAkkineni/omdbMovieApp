@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Dimensions, FlatList, Platform, Text, TouchableOpacity, View} from 'react-native';
+import {Dimensions, FlatList, Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import styles from '../StyleSheet';
 
 export default class Episode extends React.Component {
@@ -37,7 +37,7 @@ export default class Episode extends React.Component {
       });
   }
 
-
+//        <Text>{episode.Poster} </Text>
   render() {
     const {episode} = this.state;
     return (
@@ -59,6 +59,7 @@ export default class Episode extends React.Component {
           <Text style={{fontWeight: 'bold'}}>Plot: </Text>
           <Text>{episode.Plot}</Text>
         </Text>
+        <Image style={styles.PosterStyle} source={{uri: episode.Poster}}/>
       </View>
     );
   }

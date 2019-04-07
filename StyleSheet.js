@@ -29,4 +29,10 @@ module.exports = StyleSheet.create({
   FontColor: {
     color: '#101D42',
   },
+  PosterStyle: {
+    marginTop: width * 0.05,
+    width: width * 0.8,
+    height: width * 0.8,
+  }
+
 });

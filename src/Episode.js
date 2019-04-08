@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Dimensions, FlatList, Image, Platform, StyleSheet, Text, View} from 'react-native';
-const { height, width } = Dimensions.get('window');
+import {Dimensions, FlatList, Image, Platform, Text, TouchableOpacity, View} from 'react-native';
+import styles from '../StyleSheet';
 
 export default class Episode extends React.Component {
   state = {
@@ -10,7 +10,6 @@ export default class Episode extends React.Component {
   componentDidMount() {
     this.getEpisode();
   }
-
 
   getEpisode = () => {
     const { navigation } = this.props;
@@ -23,11 +22,9 @@ export default class Episode extends React.Component {
       fetchString += str + '+'
     });
     fetchString += '&season=' + season + '&episode=' + episode +'&apikey=92e3aa84'
-    console.log('fetchString: ', fetchString);
     fetch(fetchString)
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log('responseJson: ', responseJson);
         this.setState({
           episode: responseJson,
         });
@@ -37,41 +34,29 @@ export default class Episode extends React.Component {
       });
   }
 
-
   render() {
     const {episode} = this.state;
     return (
       <View style={styles.container}>
-        <View style={{flex: 2}}>
-          <Text style={styles.welcome}>{episode.Title}</Text>
-        </View>
-        <View style={{flex: 4}}>
-          <Text style={styles.instructions}>Directed by: {episode.Director} </Text>
-          <Text style={styles.instructions}>written by: {episode.Writer} </Text>
-          <Text style={styles.instructions}>Rated: {episode.Rated} </Text>
-          <Text style={styles.instructions}>Plot: {episode.Plot} </Text>
-        </View>
-        <View style={{flex: 5}}>
-        </View>
+        <Text style={[styles.Title, styles.FontColor]}>{episode.Title}</Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Directed by: </Text>
+          <Text>{episode.Director}</Text>
+        </Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Written by: </Text>
+          <Text>{episode.Writer}</Text>
+        </Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Rated: </Text>
+          <Text>{episode.Rated}</Text>
+        </Text>
+        <Text style={[styles.EpisodeInformation, styles.FontColor]}>
+          <Text style={{fontWeight: 'bold'}}>Plot: </Text>
+          <Text>{episode.Plot}</Text>
+        </Text>
+        <Image style={styles.PosterStyle} source={{uri: episode.Poster}}/>
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    textAlign: 'left',
-    paddingLeft: width * 0.1,
-    paddingRight: width * 0.1,
-    backgroundColor: '#89D2DC',
-  },
-  welcome: {
-    color: '#101D42',
-    marginTop: width * 0.1,
-    fontSize: height * 0.03,
-  },
-  instructions: {
-    color: '#101D42',
-  },
-});

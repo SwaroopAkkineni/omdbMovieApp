@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={
+    Object {
+      "backgroundColor": "#89D2DC",
+      "flex": 1,
+      "paddingLeft": 75,
+      "paddingRight": 75,
+      "textAlign": "left",
+    }
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "fontSize": 40.019999999999996,
+          "fontWeight": "bold",
+          "marginBottom": 37.5,
+          "marginTop": 37.5,
+        },
+        Object {
+          "color": "#101D42",
+        },
+      ]
+    }
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "marginTop": 37.5,
+        },
+        Object {
+          "color": "#101D42",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Directed by: 
+    </Text>
+    <Text />
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "marginTop": 37.5,
+        },
+        Object {
+          "color": "#101D42",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Written by: 
+    </Text>
+    <Text />
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "marginTop": 37.5,
+        },
+        Object {
+          "color": "#101D42",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Rated: 
+    </Text>
+    <Text />
+  </Text>
+  <Text
+    style={
+      Array [
+        Object {
+          "marginTop": 37.5,
+        },
+        Object {
+          "color": "#101D42",
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Object {
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Plot: 
+    </Text>
+    <Text />
+  </Text>
+  <Image
+    source={
+      Object {
+        "uri": undefined,
+      }
+    }
+    style={
+      Object {
+        "height": 600,
+        "marginTop": 37.5,
+        "width": 600,
+      }
+    }
+  />
+</View>
+`;

@@ -14,8 +14,8 @@ export default class Season extends React.Component {
 
   getEpisodes = () => {
     const { navigation } = this.props;
-    const showName = navigation.getParam('showName');
-    const season = navigation.getParam('season');
+    const showName = navigation.state.params.showName;
+    const season = navigation.state.params.season;
     let fetchString = 'http://www.omdbapi.com/?t=';
 
     showName.split(' ').forEach(function(str) {
@@ -37,8 +37,8 @@ export default class Season extends React.Component {
   render() {
     const { episodes } = this.state;
     const { navigation } = this.props;
-    const showName = navigation.getParam('showName');
-    const season = navigation.getParam('season');
+    const showName = navigation.state.params.showName;
+    const season = navigation.state.params.season;
     return (
       <View style={styles.container}>
         <Text style={[styles.Title, styles.FontColor]}>{showName}: Season {season} </Text>

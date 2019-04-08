@@ -13,9 +13,9 @@ export default class Episode extends React.Component {
 
   getEpisode = () => {
     const { navigation } = this.props;
-    const episode = navigation.getParam('episode');
-    const showName = navigation.getParam('showName');
-    const season = navigation.getParam('season');
+    const episode = navigation.state.params.episode;
+    const showName = navigation.state.params.showName;
+    const season = navigation.state.params.season;
     let fetchString = 'http://www.omdbapi.com/?t=';
 
     showName.split(' ').forEach(function(str) {
